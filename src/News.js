@@ -10,24 +10,18 @@ class News extends Component {
   }
 
   render() {
+    console.log(this.props);
     const articles = [];
-    for (let i = 0; i < this.props.news.length; i++) {
+    for (let i = 0; i < this.props.news.length; i += 1) {
       articles.push(<Article story={this.props.news[i]} key={`article${i}`} />);
     }
 
-    let headline = '';
-    if (this.props.symbol.length >= 3) {
-      headline = `${this.props.symbol} in the news:`;
-    }
-    return (
-      <div className="News">
-        <div>
-          <p>{headline}</p>
-          <button onClick={() => this.props.newsRequest(this.props.symbol)}>Click for news</button>
-        </div>
-        {articles}
-      </div>
-    );
+    // console.log('news props', this.props);
+    // let headline = '';
+    // if (this.props.symbol.length >= 3) {
+    //   headline = `${this.props.symbol} in the news:`;
+    // }
+    return <div className={`news ${this.props.side}News`}>{articles}</div>;
   }
 }
 

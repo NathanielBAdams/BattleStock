@@ -1,91 +1,401 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a4a4a;
+  transition: 1s;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+}
+
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1200px;
+  height: 150px;
+  margin: auto;
+  font-weight: 900;
+  font-size: xx-large;
+  background: rgb(155, 163, 198);
+  background: linear-gradient(90deg, rgba(155, 163, 198, 0.95) 22%, rgba(82, 200, 161, 0.95) 78%);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
 }
 
 .container {
-  display: inline-grid;
+  margin-top: 50px;
+  display: grid;
   width: 95vw;
   min-width: 500px;
-  grid-template-columns: 5fr 2fr 5fr;
+  /* 3 total columns */
+  grid-template-columns: 9fr 1fr 9fr;
+  /* 9 total rows */
+
   grid-column-gap: 10px;
-  border: 3px solid grey;
+
   border-bottom: none;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-.centerContainer {
-  display: flex;
-  justify-content: center;
+.innerContainer {
+  display: grid;
+  grid-template-rows: 60px 90px repeat(8, 50px) 8fr;
+  grid-template-columns: 2fr 1fr 10fr 1fr 2fr;
+  border-radius: 5px;
+  min-width: 220px;
+  margin: 20px;
+  height: 100vh;
 }
 
-#centerColumn {
+.centerContainer {
+  display: grid;
+  grid-template-rows: 60px 90px repeat(8, 50px);
+
   border-radius: 5px;
-  background-color: lightslategrey;
+  min-width: 220px;
+  margin: 30px;
+  height: 600px;
+}
+
+.buffer {
+  height: 75px;
+}
+#centerColumn {
+  display: flex;
+  justify-content: center;
+  background-color: none;
   grid-column: 2 / 3;
-  min-width: 170px;
-  height: 100vh;
+  min-width: 120px;
+  height: 600px;
   margin: none;
-  margin-top: 10px;
 }
 
 .stockBox {
-  margin: 10px;
-  height: 100vh;
+  height: 950px;
 }
 
 #stockBoxLeft {
-  box-shadow: 1px 1px 1px 1px black;
-  border-radius: 5px;
-  min-width: 220px;
-  margin: 10px;
-  background-color: palegoldenrod;
+  background: rgb(216, 214, 232);
+  background: linear-gradient(90deg, rgba(216, 214, 232, 1) 0%, rgba(145, 151, 177, 1) 61%);
   grid-column: 1 / 2;
+  display: grid;
+  border-radius: 5px;
+  transition: 300ms;
 }
 
 #stockBoxRight {
-  box-shadow: 1px 1px 1px 1px black;
-  border-radius: 5px;
-  min-width: 220px;
-  margin: 10px;
-  background-color: paleturquoise;
+  background: rgb(82, 200, 161);
+  background: linear-gradient(90deg, rgba(82, 200, 161, 0.95) 39%, rgba(181, 227, 181, 1) 100%);
   grid-column: 3 / 4;
+  display: grid;
+  border-radius: 5px;
 }
 
-.searchBoxLeft {
+.searchBox {
+  grid-row: 1 / 2;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
-  width: 98%;
+  width: 90%;
+  padding: 3px;
+  margin: 5%;
+  border: none;
+  box-shadow: 1px 1px 1px 1px black;
+  border-radius: 3px;
+  transition: 500ms;
+  text-align: center;
+  height: 40px;
+  font-size: larger;
+  color: darkslategray;
+  background: linear-gradient(#eef0f2, #aabac6);
+
+  transition: 350ms ease-out;
+}
+
+.newsDisplay {
+  grid-row: 11 / 12;
+}
+
+.searchBox:focus {
+  outline: none;
+  background-position: 100px;
+}
+
+.searchBox:hover {
+  box-shadow: 3px 3px 1px 1px #4a4a4a;
+}
+
+.category {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-category:hover {
+  font-size: 130%;
+  text-decoration: underline;
+  transition: 310ms;
+}
+.versus {
+  padding-top: 20px;
+  grid-row: 1 / 2;
+}
+.currentPrice {
+  transition: 310ms;
+  grid-row: 3 / 4;
+}
+
+.dayGain {
+  grid-row: 4 / 5;
+}
+
+.weekGain {
+  grid-row: 5 / 6;
+}
+
+.monthGain {
+  grid-row: 6 / 7;
+}
+
+.yearGain {
+  grid-row: 7 / 8;
+}
+
+.fiveYearGain {
+  grid-row: 8 / 9;
+}
+
+.news {
+  transition: 1s;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-height: 780px;
+  border-radius: 10px;
+}
+.article {
+  margin: 25px;
+  padding: 20px;
+  border: 1px solid darkslategrey;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 1px 1px slategray;
+  transition: 300ms;
+  height: 365px;
+  width: 300px;
+  transition: 1s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.article:hover {
+  box-shadow: 4px 4px 1px 1px darkslategray;
+  background-color: floralwhite;
+  transition: 300ms;
+}
+
+.article-imageContainer {
+  display: flex;
+}
+
+.newsImage {
+  margin: 20px auto;
+  max-height: 150px;
+  max-width: 80%;
+  border-radius: 5px;
+  border: 1px solid lightslategray;
+}
+
+.article h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-description {
+  color: black;
+  text-decoration: none;
+  text-transform: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* background-color: lightslategray;
+  color: lightgrey;
+  border: 1 px solid goldenrod;
+  border-radius: 5px; */
+}
+
+.article a {
+  color: #6b82ce;
+}
+
+.winner {
+  font-size: 130%;
+  color: whitesmoke;
+  background-color: forestgreen;
+  box-shadow: 6px 6px 11px 6px darkgreen;
+  transition: 500ms;
+  border-radius: 15px;
+}
+
+.loser {
+  background-color: tomato;
+  transition: 500ms;
+  font-size: 85%;
+  border-radius: 15px;
+  box-shadow: inset 3px 2px 12px 7px rosybrown;
+}
+
+.leftCat {
+  grid-column: 5 / 6;
+}
+
+.leftCat:hover {
+  font-weight: bolder;
+  transition: 310ms;
+}
+
+.rightCat {
+  grid-column: 1 / 2;
+}
+
+.rightCat:hover {
+  font-weight: bolder;
+  transition: 310ms;
+}
+
+.leftNews {
+  grid-column: 1 / 4;
+  grid-row: 2 / span 10;
+}
+
+.rightNews {
+  grid-column: 2 / 6;
+  grid-row: 2 / span 10;
+}
+
+.navbar-btn {
+  margin: 10px;
   padding: 3px;
   border: none;
   box-shadow: 1px 1px 1px 1px black;
   border-radius: 3px;
   transition: 500ms;
+  height: 40px;
+  width: 80px;
+  background: linear-gradient(#eef0f2, #aabac6);
+  transition: 350ms ease-out;
 }
-.searchBoxRight {
-  display: flex;
-  justify-content: center;
-  width: 98%;
+
+.navbar-btn:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 1px 1px #4a4a4a;
+}
+
+.navbar-input {
+  margin: 10px;
   padding: 3px;
   border: none;
   box-shadow: 1px 1px 1px 1px black;
   border-radius: 3px;
   transition: 500ms;
+  text-align: center;
+  height: 40px;
+  font-size: larger;
+  color: darkslategray;
+
+  transition: 350ms ease-out;
 }
 
-.searchBoxLeft:focus {
+.navbar-input:hover {
+  box-shadow: 3px 3px 1px 1px #4a4a4a;
+}
+
+.navbar-input:focus {
   outline: none;
+  background-position: 100px;
 }
-.searchBoxRight:focus {
+
+.navbar-btn:focus {
+  outline: 1px solid gray;
+  box-shadow: 1px 1px 1px 1px #4a4a4a;
+}
+
+.login-msg {
+  display: inline;
+  margin-left: 20px;
+}
+
+.dropdown {
+  transition: 1s;
+  float: left;
+  overflow: hidden;
+  border-margin: 10px;
+}
+
+.dropdown .dropbtn {
+  transition: 1s;
+
+  font-size: 16px;
+  border: none;
   outline: none;
+  color: white;
+  padding: 14px 16px;
+  color: darkslategray;
+  background: linear-gradient(#eef0f2, #aabac6);
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
 }
-.searchBoxLeft:hover {
-  box-shadow: 2px 2px 2px 2px goldenrod;
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  transition: 1s;
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
-.searchBoxRight:hover {
-  box-shadow: 2px 2px 2px 2px goldenrod;
+
+/* Links inside the dropdown */
+.dropdown-content p {
+  transition: 500ms;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content p:hover {
+  transition: 500ms;
+  background-color: #4a4a4a;
+  color: whitesmoke;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdownLeft {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.dropdownRight {
+  grid-column: 4 / 6;
+  grid-row: 1 / 2;
 }

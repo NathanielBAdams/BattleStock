@@ -5,18 +5,17 @@ import StockBox from './StockBox.js';
 import Center from './Center.js';
 
 const Container = (props) => {
+  const { username, loggedIn, favs } = props;
   return (
     <div className="container">
-      <p>Main Container</p>
-
       <div id="stockBoxLeft">
-        <StockBox side="Left" key="LEFT" />
+        <StockBox side="left" loggedIn={loggedIn} favs={favs} key="LEFT" />
       </div>
-      <div className="centerContainer">
-        <Center />
+      <div id="centerColumn">
+        <Center username={username} />
       </div>
       <div id="stockBoxRight">
-        <StockBox side="Right" key="RIGHT" />
+        <StockBox side="right" loggedIn={loggedIn} favs={favs} key="RIGHT" />
       </div>
     </div>
   );

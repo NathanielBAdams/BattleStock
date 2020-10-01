@@ -4,8 +4,9 @@
   "description": "Battle two stocks",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development",
-    "start": "webpack-dev-server --mode development",
+    "build": "NODE_ENV=development webpack",
+    "start": "NODE_ENV=production  nodemon server/server.js",
+    "dev": "NODE_ENV=development webpack-dev-server ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nate Adams",
@@ -13,8 +14,8 @@
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^6.1.0",
@@ -26,12 +27,19 @@
   "dependencies": {
     "@stoqey/finnhub": "0.0.7",
     "axios": "^0.20.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "finnhub": "^1.2.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.10.7",
     "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "url": "^0.11.0"
   }
 }
