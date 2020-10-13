@@ -18,7 +18,6 @@ const Data = ({ lastPrice, symbol, gains, side, news, newsRequest, favs }) => {
       }
     });
   }
-
   const stockData = [];
   if (favs.length) {
     stockData.push(<StockDropdown favs={favs} side={side} />);
