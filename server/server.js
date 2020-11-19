@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+
+require('dotenv').config();
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -14,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-const mongoURI =
-  'mongodb+srv://BargeLeveler7:codesmithMongoDB@cluster0.bepyw.mongodb.net/battleStock?retryWrites=true&w=majority';
+const mongoURI = process.env.MONGO_URI;
+
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((x) => {

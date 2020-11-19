@@ -10,7 +10,7 @@ class News extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const articles = [];
     for (let i = 0; i < this.props.news.length; i += 1) {
       articles.push(<Article story={this.props.news[i]} key={`article${i}`} />);
