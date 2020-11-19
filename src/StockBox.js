@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { hot } from 'react-hot-loader';
-import Data from './data.js';
+import Data from './Data.js';
 import News from './News.js';
 import Navbar from './Navbar.js';
 import StockDropdown from './StockDropdown.js';
