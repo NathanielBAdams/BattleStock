@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { hot } from 'react-hot-loader';
 import Data from './data.js';
-import News from './news.js';
+import News from './News.js';
 import Navbar from './Navbar.js';
 import StockDropdown from './StockDropdown.js';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import News from './news.js';
+import News from './News.js';
 import StockDropdown from './StockDropdown.js';
 
 const Data = ({ lastPrice, symbol, gains, side, news, newsRequest, favs }) => {
